@@ -1,4 +1,4 @@
-# AR.js - Efficient Augmented Reality for the Web using ARToolKit
+# AR.js - Efficient Augmented Reality for the Web
 
 I am focusing hard on making AR for the web a reality.
 This repository is where I publish the code.
@@ -15,11 +15,13 @@ So I wanted to publish thus people can try it and have fun with it :)
 [![AR.js 1.0 Video](https://cloud.githubusercontent.com/assets/252962/23441016/ab6900ce-fe17-11e6-971b-24614fb8ac0e.png)](https://youtu.be/0MtvjFg7tik)
 
 
+
+If you wanna chat, check [![Gitter chat](https://badges.gitter.im/AR-js/Lobby.png)](https://gitter.im/AR-js/Lobby)
+
 # Try it on Mobile
 
-It works on **any browser with WebGL and WebRTC**. So android works. Window mobile works.
-IOS doesnt work unfortunately. IOS safari doesn't support WebRTC at the moment.
-Apple is [currently working on it](https://webkit.org/status/#specification-webrtc) tho.
+It works on all platforms. Android, IOS and window phone. It run **any browser with WebGL and WebRTC**.
+(for IOS, you need to update to ios11)
 
 To try on your phone is only 2 easy steps, check it out!
 
@@ -39,7 +41,7 @@ It is thanks to the hard work from others, that we can today reach this mythic 6
 So i would like to thanks :
 
 - **three.js** for being a great library to do 3d on the web.
-- **artoolkit!** years of development and experiences on doing augmented reality
+- **artoolkit**! years of development and experiences on doing augmented reality
 - **emscripten and asm.js**! thus we could compile artoolkit c into javascript
 - **chromium**! thanks for being so fast!
 
@@ -72,7 +74,7 @@ With this project, we bring more performance to artoolkit.
 artoolkit is a software with years of experience doing augmented reality. It is able to do a lot!
 
 It is marker based. It supports a wide range of markers: multiple types of markers [pattern](https://artoolkit.org/documentation/doku.php?id=3_Marker_Training:marker_training)/[barcode](https://artoolkit.org/documentation/doku.php?id=3_Marker_Training:marker_barcode)
-multiple independant markers at the same time, or [multiple markers acting as a single marker](https://artoolkit.org/documentation/doku.php?id=3_Marker_Training:marker_multi)
+multiple independent markers at the same time, or [multiple markers acting as a single marker](https://artoolkit.org/documentation/doku.php?id=3_Marker_Training:marker_multi)
 up to you to choose.
 
 # What’s New?
@@ -105,14 +107,19 @@ by
 [@AndraConnect](https://twitter.com/AndraConnect).
 
 ```html
-<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded artoolkit='sourceType: webcam;'>
-		<a-box position='0 0 0.5' material='opacity: 0.5;'></a-box>
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
-</body>
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+  	<a-marker preset="hiro">
+            <a-box position='0 0.5 0' material='color: black;'></a-box>
+  	</a-marker>
+  	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
 ```
 
 See on [codepen](https://codepen.io/jeromeetienne/pen/mRqqzb) or [bl.ocks.org](https://bl.ocks.org/jeromeetienne/feeb69257803e69f18dc3ea5f4fc6d71)
@@ -121,6 +128,12 @@ See on [codepen](https://codepen.io/jeromeetienne/pen/mRqqzb) or [bl.ocks.org](h
 We started a [AR.js blog](https://medium.com/arjs), thus we can write about
 all the crazy ideas related to AR.js.
 
+- ["Area Learning with Multi-Markers in AR.js - For a Larger & More Stable Augmented Reality"](https://medium.com/arjs/area-learning-with-multi-markers-in-ar-js-1ff03a2f9fbe)
+  by [@AndraConnect](https://twitter.com/AndraConnect)
+- ["WebVR for Augmented Reality - Using WebVR to write cross-platform AR applications"](https://medium.com/arjs/webvr-for-augmented-reality-f1e69a505902)
+  by [@jerome_etienne](https://twitter.com/jerome_etienne)
+- ["Augmenting The Web Page - Bringing augmenting reality to normal web pages"](https://medium.com/arjs/augmenting-the-web-page-e893f2d199b8)
+  by [@jerome_etienne](https://twitter.com/jerome_etienne)
 - ["Server Rendering for Augmented Reality - Cloud Rendering with Web Standards"](https://medium.com/arjs/server-rendering-for-augmented-reality-2de0a71aae04)
   by [@jerome_etienne](https://twitter.com/jerome_etienne)
 - ["AR-Code:a Fast Path to Augmented Reality - From qrcode to AR.js content"](https://medium.com/arjs/ar-code-a-fast-path-to-augmented-reality-60e51be3cbdf)
@@ -128,111 +141,36 @@ all the crazy ideas related to AR.js.
 - ["Augmented Reality in 10 Lines of HTML - AR.js with a-frame magic"](https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf)
   by [@AndraConnect](https://twitter.com/AndraConnect)
 
+# Great Posts by Users
+
+- How to write a AR.js application ?
+Here is a [full tutorial](https://marmelab.com/blog/2017/06/19/augmented-reality-html5.html)
+by [marmelab](https://marmelab.com/) featuring [François Zaninotto](https://twitter.com/francoisz).
+It explain how to code a full application on phone! Step by Steps, with explaination and videos. 
+Very great! the perfect step if you want to start writing AR application today.
+- Great post about [WebAR for designer](http://www.nexusinteractivearts.com/webar/)
+by [nexus interactive arts](http://www.nexusinteractivearts.com/)
+
+# Augmented Website
+[Seminal post](https://medium.com/arjs/augmenting-the-web-page-e893f2d199b8) explaining the concept.
+The service is available [webxr.io/augmented-website](https://webxr.io/augmented-website/)
+
+[![Augmented Website](https://user-images.githubusercontent.com/252962/27472386-0d11e59a-57f3-11e7-9fa5-34332c5484f7.png)](https://webxr.io/augmented-website/)
+
+
 # Examples
 
-Three.js Examples:
+Some applications:
 
-- [basic](https://jeromeetienne.github.io/AR.js/three.js/examples/basic.html) :
-  three.js example for basic
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/basic.html))
-- [markerroot](https://jeromeetienne.github.io/AR.js/three.js/examples/markerroot.html) :
-  three.js example for markerroot
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/markerroot.html))
-- [mobile-performance](https://jeromeetienne.github.io/AR.js/three.js/examples/mobile-performance.html) :
-  three.js example for mobile-performance
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/mobile-performance.html))
-- [profile](https://jeromeetienne.github.io/AR.js/three.js/examples/profile.html) :
-  three.js example for profile
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/profile.html))
-- [deadreckoning](https://jeromeetienne.github.io/AR.js/three.js/examples/deadreckoning.html) :
-  Experiment with dead reckoning - not conclusive :(
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/deadreckoning.html))
-- [hole-in-the-wall](https://jeromeetienne.github.io/AR.js/three.js/examples/hole-in-the-wall/hole-in-the-wall.html) :
-  three.js example for hole-in-the-wall
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/hole-in-the-wall/hole-in-the-wall.html))
-- [shadow](https://jeromeetienne.github.io/AR.js/three.js/examples/shadow.html) :
-  three.js example for shadow
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/shadow.html))
-- [refraction](https://jeromeetienne.github.io/AR.js/three.js/examples/refraction/refraction.html) :
-  three.js example for refraction
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/refraction/refraction.html))
-- [markercloak](https://jeromeetienne.github.io/AR.js/three.js/examples/markercloak.html) :
-  three.js example for markercloak
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/markercloak.html))
-- [liquid-marker](https://jeromeetienne.github.io/AR.js/three.js/examples/liquid-marker/) :
-  demo transforming table and wall as liquid
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/liquid-marker/index.html))
-- [holographic-message](https://jeromeetienne.github.io/AR.js/three.js/examples/holographic-message/) :
-  A holographic-message in Augmented reality. Part of a business card for [@AndraConnect](https://twitter.com/AndraConnect)
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/holographic-message/index.html))
-- [videoinwebgl](https://jeromeetienne.github.io/AR.js/three.js/examples/videoinwebgl.html) :
-  Add video in webgl - useful for phone-in-hmd usecase - work in progress
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/videoinwebgl.html))
-- [ar-in-webvr](https://jeromeetienne.github.io/AR.js/three.js/examples/ar-in-webvr.html) :
-  Displaying AR in WebVR - work in progress
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/ar-in-webvr.html))
-- [arcode](https://jeromeetienne.github.io/AR.js/three.js/examples/arcode.html) :
-  generator of AR-Code
+- [Pattern Marker Training](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html) :
+  Generate a [pattern marker](https://artoolkit.org/documentation/doku.php?id=3_Marker_Training:marker_training) with your own image.
+- [ARCode Generator](https://jeromeetienne.github.io/AR.js/three.js/examples/arcode.html) :
+  Generator of AR-Code
   ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/arcode.html))
-- [magic-book](https://jeromeetienne.github.io/AR.js/three.js/examples/magic-book/index.html) :
-  Experimentation around magical book to open a secret door in [upload.io office](http://upload.io)
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/magic-book/index.html))
-- [measure-it](https://jeromeetienne.github.io/AR.js/three.js/examples/measure-it.html) :
-  three.js example for measure-it
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/measure-it.html))
-- [parameters-tunning](https://jeromeetienne.github.io/AR.js/three.js/examples/parameters-tunning.html) :
-  three.js example for parameters-tunning
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/parameters-tunning.html))
-- [multi-markers](https://jeromeetienne.github.io/AR.js/three.js/examples/multi-markers/examples/player.html) :
-  multi markers examples - it shows how to dynamically learn a multi markers and then how to use it.
-  learner.html is a example of dynamic learning of a multi markers configuration. It has been designed
-  to be reusable.
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/multi-markers/examples/player.html))
-- [multimarker-artoolkit](https://jeromeetienne.github.io/AR.js/three.js/examples/multimarker-artoolkit/multimarker.html) :
-  three.js example for multimarker
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/three.js/examples/multimarker-artoolkit/multimarker.html))
-  
-a-frame Examples:
+- [WebAR Playground](https://jeromeetienne.github.io/webar-playground/) :
+  Playground running in WebAR with ar.js/chromiumAR
 
-- [basic](https://jeromeetienne.github.io/AR.js/aframe/examples/basic.html) :
-  a-frame example for basic
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/basic.html))
-- [demo](https://jeromeetienne.github.io/AR.js/aframe/examples/demo.html) :
-  a-frame example for demo
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/demo.html))
-- [aframe-logo](https://jeromeetienne.github.io/AR.js/aframe/examples/aframe-logo.html) :
-  a-frame example for aframe-logo
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/aframe-logo.html))
-- [hatsune](https://jeromeetienne.github.io/AR.js/aframe/examples/hatsune.html) :
-  a-frame example for hatsune
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/hatsune.html))
-- [full-hatsune](https://jeromeetienne.github.io/AR.js/aframe/examples/full-hatsune.html) :
-  a-frame example for full-hatsune
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/full-hatsune.html))
-- [minecraft](https://jeromeetienne.github.io/AR.js/aframe/examples/minecraft.html) :
-  a-frame example for minecraft
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/minecraft.html))
-- [marker-camera](https://jeromeetienne.github.io/AR.js/aframe/examples/marker-camera.html) :
-  a-frame example for marker-camera
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/marker-camera.html))
-- [multiple-indepandent-markers](https://jeromeetienne.github.io/AR.js/aframe/examples/multiple-independant-markers.html) :
-  a-frame example for multiple-indepandent-markers
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/multiple-independant-markers.html))
-- [minimal](https://jeromeetienne.github.io/AR.js/aframe/examples/minimal.html) :
-  Want to do Augmented Reality on the web ? You can do it [in less than 10 lines of html now](https://twitter.com/jerome_etienne/status/842192608256512000) :)
-  minimal.html is the shortest html file you need if you want to do ar.js with a-frame
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/minimal.html))
-- [mobile-performance](https://jeromeetienne.github.io/AR.js/aframe/examples/mobile-performance.html) :
-  a-frame example for mobile-performance
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/aframe/examples/mobile-performance.html))
-
-WebVR-polyfill Examples:
-- [aframe](https://jeromeetienne.github.io/AR.js/webvr-polyfill/examples/aframe.html) :
-  a-frame example for aframe
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/webvr-polyfill/examples/aframe.html))
-- [basic](https://jeromeetienne.github.io/AR.js/webvr-polyfill/examples/basic.html) :
-  a-frame example for basic
-  ([source](https://github.com/jeromeetienne/AR.js/blob/master/webvr-polyfill/examples/basic.html))
+[ALL EXAMPLES](https://jeromeetienne.github.io/AR.js-docs/misc/EXAMPLES.html)
 
 # Folders
 - ```/three.js``` is the extension to use it with [pure three.js](https://threejs.org)
@@ -270,49 +208,6 @@ or [gaming](https://www.youtube.com/watch?v=kEMDgvfFUcI).
 I exited to see what people will do with AR.js :)
 
 
-# Futures
-- add webworkers
-- add the nft
-- handle sensor fusion with the IMU ? Assume that the marker is fixed in space
-- marker removal in the video - https://twitter.com/jerome_etienne/status/838584931009835009
-- dynamic multiple markers - https://github.com/artoolkit/jsartoolkit5/issues/34
-- put the video in the webgl (and not the dom), as an options
-- stabilizer for marker orientation and/or position
-  - some tweening/smoothing on marker orientation - maybe just a lerp ?
-  - it would help the shakyness especially when the source resolution is low
-- stabilizer using gravity ?
-  - using gravity it is possible to know if the marker is on a wall or on a table
-  - once we flag the marker as on a wall, we can reduce shakyness from video detection
-  - by using gravity sensor
-- discover marker absolute orientation by comparing that to the phone gravity
-  - can be used to know if the marker is on a table, or on a wall
-- area learning with markers 
-  - auto generation of multimarkers pattern
-  - the phone is in a mode acquisition
-  - the user walks around the room
-  - the phone takes statistic on markers location
-  - the actual area will be the average of those statistics.
-- cloud computing to get better rendering
-  - fancy name for easy tech -
-  [Capture a MediaStream From a Canvas, Video or Audio Element](https://developers.google.com/web/updates/2016/10/capture-stream)
-  - have a browser on server to produce high quality 3d - aka pbs and to stream that to a phone
-  - so when the phone is moving a lot, we do the local rendering
-  - when the phone is stable, we do the server rendering
-- social AR - https://github.com/haydenjameslee/networked-aframe/blob/master/docs/Tutorial:%20Create%20your%20first%20Networked-Aframe%20experience.md
-- use a pingpong ball or a metallic ball to estimate the reality lighting
-  - https://www.youtube.com/watch?v=fhFzStkoE50&feature=youtu.be&t=59 for ping pong ball
-  - https://www.researchgate.net/publication/220222173_Image_Based_Shadowing_in_Real-Time_Augmented_Reality for metallic ball  
-- do a jelwery examples
-  - get a model or ring, one model of diamond
-  - https://www.transpacific-software.com/webgl/ring.html?tPage=7
-  - https://www.shadertoy.com/view/ltfXDM
-  - a refraction
-  - one ruby, one gold
-- add fresnel with bubble - even with fake envmap
-  - http://filmicworlds.com/blog/everything-has-fresnel/
-  - http://kylehalladay.com/blog/tutorial/2014/02/18/Fresnel-Shaders-From-The-Ground-Up.html
-  - http://www.tingting-wu.com/webgl_projects/ttwu_shaders.html
-
 # Browser Support
 Demo tested on the following browser setups:
 - **Desktop Chrome with webcam and 2 tabs** (one for Hero, one for result) (works!)
@@ -325,82 +220,51 @@ Demo tested on the following browser setups:
 
 Credits: @HelloDeadline, @sorianog
 
-# Ideas
-- AR Gaming - https://www.youtube.com/watch?v=EmGGGzibGok
-- AR Business Card - https://vimeo.com/4979525
-- plug ar.js into sketchfab 
-  - do a mockup with the monkey script
-  - add a AR button on sketchfab, it pops up on marker on the screen with the instruction to connect to it
-  - then you display the model in 3d on top of the screen
-  - some simple user content
-- multi user AR world : much easier to code than you think - https://twitter.com/jerome_etienne/status/842219346030149632
-- IDEA: produce a single image able to do qr-code and pattern marker. https://twitter.com/nlehuen/status/834115970641829888
-  - about having an image able to do qr-code and pattern marker at the same time. If we have such image, we skip one step.
-  - The person first acquire the qr-code with his phone, and then it goes to a webpage which is a webar application.
-  - thus the publisher only has to publish this on its ads, likely on paper ads in magazine or in the street.
-  - and the user can use his phone to immediatly see the related augmented reality
-  - https://techcrunch.com/2017/02/02/google-chrome-gets-its-own-qr-code-barcode-scanner/
-  - somebody did it! https://twitter.com/alan17wilson/status/847738517669027842
-- do something with ps vita AR cards
-  - http://ie.playstation.com/media/8DokiOUp/AR%20Play%20Cards.pdf
-  - print it on hard papers
-  - find the kind of matrix it is.
-  - just put each marker in front of the camera - using image / photo of screen
-  - and go thru each and every matrix type detection
-- Nice effect with video texture - https://www.youtube.com/watch?v=Y9HMn6bd-v8&feature=youtu.be&t=172
-- Nice snowball effect - http://www.spacegoo.com/bubbles/
+
+# Future
+
+[FUTURE.md](https://jeromeetienne.github.io/AR.js-docs/misc/FUTURE.html)
 
 # FAQ
 
-## How small can we print the markers ?
-There is no absolute. It is a ratio between the physical size of the marker, and the resolution of the camera image.
-It is a tradeoff: the larger the camera image, the slower it is running.
-The larger the camera image, the smaller the marker can be.
-
-## How to Run AR.js Locally
-First you have to copy the repository locally (using git clone).
-After that, just serve the files on a static http server. 
-Personnaly, i use a simple command line http server called ```http-server```.
-You can install it via ```npm install -g http-server```.
+[FAQ.md](https://jeromeetienne.github.io/AR.js-docs/misc/FAQ.html)
 
 
-## About WebRTC and https
-WebRTC requires to have a [Secure Contexts](https://w3c.github.io/webappsec-secure-contexts/), 
-So in short, you need to [serve your application over https](http://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https).
-Webrtc records video/audio and it is really sensitive information.
-Without https, an attacker to easily know what is recorded by your webcam, or even insert audio and makes you say anything he want to.
-Clearly not something desirable :)
-
-So, in short, you need to **serve your application over https** to use the webcam. 
-
-Unfortunatly, this is always a pain to setup https, but it is the prize to pay for security.
-[@mritzco](https://gist.github.com/mritzco) posted a great
-[description on https configuration for ar.js](https://gist.github.com/mritzco/18dfe13096294592d5eb53e7e1a5f63c)
-on gist.
-Let's note that [github pages](https://pages.github.com/) are served over https by default. So if you deploy on github, it is easier. 
-During developement, there is a trick, [localhost is assumed secured](https://w3c.github.io/webappsec-secure-contexts/#localhost).
-So if you serve your file over localhost, you don't need to have https.
 
 # How To Release ?
 
+This one is mainly for [me](@jerome_etienne) to remember :)
+
 ```bash
 # replace REVISION to the proper version
-atom three.js/threex-artoolkitcontext.js package.json
+atom three.js/src/threex/threex-artoolkitcontext.js package.json README.md
 
 # Rebuild a-frame and webvr-polyfill
-(cd aframe && make minify) && (cd webvr-polyfill && make minify)
+make minify
 
 # Commit everything
 git add . && git commit -a -m 'Last commit before release'
 
+# Go to master branch
+git checkout master
+
+# Merge dev branch into master branch
+git merge dev
+
 # tag the release
-git tag 1.0.0
+git tag 1.5.1
 
 # push the tag on github
 git push origin --tags
 
+# push commits tag on github
+git push
+
 # update npm package.json
 npm publish
+
+# Come back to dev branch
+git checkout dev
 
 # update the a-frame codepen
 open "https://codepen.io/jeromeetienne/pen/mRqqzb?editors=1000#0"
